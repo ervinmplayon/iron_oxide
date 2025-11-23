@@ -1,10 +1,18 @@
 fn main() {
     println!("Hello, world!");
     another_function(5);
+
     let x = return_5();
     println!("The value of x is: {x}");
+
     let x = plus_one(x);
     println!("The new value of x is {x}");
+    
+    let y = {
+        let x = 3; // a statement
+        x + 1 // an expression
+    };
+    println!("The value of y is: {y}")
 }
 
 fn another_function(x: i32) {
