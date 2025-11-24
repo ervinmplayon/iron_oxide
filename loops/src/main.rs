@@ -19,6 +19,10 @@ fn main() {
     println!("===========================================");
     println!("WHILE LOOP");
     while_loopz();
+    println!("===========================================");
+    inefficient_loop();
+    println!("===========================================");
+    for_loop_frfr();
 }
 
 // Loop labels to disambiguate between multiple loops
@@ -36,4 +40,26 @@ fn while_loopz() {
     }
 
     println!("LIFTOFF!!!");
+}
+
+
+// This code is error prone. The program could panic if the index value or test condition is incorrect. 
+// Its also slow, because the compiler adds runtime code to perform the conditional check of whether the index is within the bounds of the array on every iteration through the loop. 
+fn inefficient_loop() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value is: {}", a[index]); // formatting is different due to presence of index
+
+        index += 1;
+    }
+}
+
+fn for_loop_frfr() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
 }
