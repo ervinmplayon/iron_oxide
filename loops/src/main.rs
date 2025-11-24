@@ -1,5 +1,11 @@
 fn main() {
     let mut count = 0;
+
+    // Loop labels to disambiguate between multiple loops
+    // If you have loops within loops, break and continue apply to the innermost loop at that point. You can optionally specify a loop label on a loop
+    // that you can then use with break or continue to specify that those keywords apply to the labeled loop instead of the innermost loop. 
+    // Loop labels must begin with a single quote.
+
     'counting_up: loop {
         println!("count = {count}");
         let mut remaining = 10; 
@@ -23,12 +29,9 @@ fn main() {
     inefficient_loop();
     println!("===========================================");
     for_loop_frfr();
+    println!("===========================================");
+    for_loop_liftoff();
 }
-
-// Loop labels to disambiguate between multiple loops
-// If you have loops within loops, break and continue apply to the innermost loop at that point. You can optionally specify a loop label on a loop
-// that you can then use with break or continue to specify that those keywords apply to the labeled loop instead of the innermost loop. 
-// Loop labels must begin with a single quote.
 
 fn while_loopz() {
     let mut number = 3;
@@ -42,6 +45,14 @@ fn while_loopz() {
     println!("LIFTOFF!!!");
 }
 
+// Range - provided by the standard library, generates all numbers in sequence starting from one number and ending before another number. 
+// rev() - reverses the range
+fn for_loop_liftoff() {
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
+}
 
 // This code is error prone. The program could panic if the index value or test condition is incorrect. 
 // Its also slow, because the compiler adds runtime code to perform the conditional check of whether the index is within the bounds of the array on every iteration through the loop. 
