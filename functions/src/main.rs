@@ -2,12 +2,12 @@ fn main() {
     println!("Hello, world!");
     another_function(5);
 
-    let x = return_5();
+    let x = return_5(); // would be the same as let x = 5;
     println!("The value of x is: {x}");
 
     let x = plus_one(x);
     println!("The new value of x is {x}");
-    
+
     let y = {
         let x = 3; // a statement
         x + 1 // an expression
@@ -20,7 +20,7 @@ fn another_function(x: i32) {
 }
 
 fn return_5() -> i32 {
-    5 // an expression, 
+    5 // an expression whose value we want to return
 }
 
 fn plus_one(x: i32) -> i32 {
