@@ -19,6 +19,12 @@ fn main() {
     println!("value of s3: {s3}");
     // println!("value of s2: {s2}"); // out of scope
 
+    let s4 = String::from("hello");
+
+    let (s5, len) = calculate_length(s4);
+
+    println!("The length of '{s5}' is {len}.");
+
 } // Here, s3 goes out of scope and is dropped. s2 was moved, nothing happens, s1 goes out of scope and is dropped
 
 fn takes_ownership(some_string: String) { // some_string comes into scope
@@ -46,4 +52,10 @@ fn takes_and_gives_back(a_string: String) -> String {
     // scope
 
     a_string  // a_string is returned and moves out to the calling function
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
 }
